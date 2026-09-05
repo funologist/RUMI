@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Rumi — AI Chat Assistant</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="glow glow-a"></div>
+<div class="glow glow-b"></div>
+
+<div class="app">
+
+  <header class="header">
+    <div class="brand">
+      <svg class="mark" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <circle cx="32" cy="32" r="26" stroke="url(#ringGrad)" stroke-width="2.5" fill="none"/>
+        <path d="M24 18h10a9 9 0 0 1 0 18h-4l-6 7V36h0a9 9 0 0 1 0-18Z" fill="url(#letterGrad)"/>
+        <circle cx="27" cy="27" r="1.6" fill="#0a0a14"/>
+        <circle cx="32" cy="27" r="1.6" fill="#0a0a14"/>
+        <circle cx="37" cy="27" r="1.6" fill="#0a0a14"/>
+        <path d="M44 14l1.8 4.2L50 20l-4.2 1.8L44 26l-1.8-4.2L38 20l4.2-1.8Z" fill="url(#sparkGrad)"/>
+        <defs>
+          <linearGradient id="ringGrad" x1="6" y1="6" x2="58" y2="58">
+            <stop offset="0" stop-color="#4f8ef7"/>
+            <stop offset="1" stop-color="#9b5cf6"/>
+          </linearGradient>
+          <linearGradient id="letterGrad" x1="18" y1="18" x2="46" y2="43">
+            <stop offset="0" stop-color="#eef1fb"/>
+            <stop offset="1" stop-color="#aab2d6"/>
+          </linearGradient>
+          <linearGradient id="sparkGrad" x1="38" y1="14" x2="50" y2="26">
+            <stop offset="0" stop-color="#4f8ef7"/>
+            <stop offset="1" stop-color="#9b5cf6"/>
+          </linearGradient>
+        </defs>
+      </svg>
+      <div class="brand-text">
+        <span class="brand-name">RUMI</span>
+        <span class="brand-tagline">AI Chat Assistant</span>
+      </div>
+    </div>
+    <button class="reset-btn" id="resetBtn" title="Start a new conversation">New chat</button>
+  </header>
+
+  <main class="chat" id="chat">
+    <div class="msg msg-bot">
+      <div class="avatar avatar-bot">
+        <span></span><span></span><span></span>
+      </div>
+      <div class="bubble bubble-bot">
+        Hi, I'm Rumi. What's on your mind?
+      </div>
+    </div>
+  </main>
+
+  <form class="composer" id="composer" autocomplete="off">
+    <input
+      type="text"
+      id="messageInput"
+      placeholder="Message Rumi…"
+      autocomplete="off"
+      maxlength="4000"
+    />
+    <button type="submit" class="send-btn" id="sendBtn" aria-label="Send message">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M4 12h15M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+  </form>
+
+</div>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
